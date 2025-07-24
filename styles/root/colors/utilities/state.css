@@ -1,0 +1,63 @@
+:root {
+  /*!----Light Mode Utility Success Colors----*/
+  --utility-success-50: var(--success-50);
+  --utility-success-100: var(--success-100);
+  --utility-success-200: var(--success-200);
+  --utility-success-300: var(--success-300);
+  --utility-success-400: var(--success-400);
+  --utility-success-500: var(--success-500);
+  --utility-success-600: var(--success-600);
+  --utility-success-700: var(--success-700);
+
+  /*!----Light Mode Utility Error Colors----*/
+  --utility-error-50: var(--error-50);
+  --utility-error-100: var(--error-100);
+  --utility-error-200: var(--error-200);
+  --utility-error-300: var(--error-300);
+  --utility-error-400: var(--error-400);
+  --utility-error-500: var(--error-500);
+  --utility-error-600: var(--error-600);
+  --utility-error-700: var(--error-700);
+
+  /*!----Light Mode Utility Warning Colors----*/
+  --utility-warning-50: var(--warning-50);
+  --utility-warning-100: var(--warning-100);
+  --utility-warning-200: var(--warning-200);
+  --utility-warning-300: var(--warning-300);
+  --utility-warning-400: var(--warning-400);
+  --utility-warning-500: var(--warning-500);
+  --utility-warning-600: var(--warning-600);
+  --utility-warning-700: var(--warning-700);
+}
+
+.dark {
+  /*!----Dark Mode Utility Success Colors----*/
+  --utility-success-50: var(--success-950);
+  --utility-success-100: var(--success-900);
+  --utility-success-200: var(--success-800);
+  --utility-success-300: var(--success-700);
+  --utility-success-400: var(--success-600);
+  --utility-success-500: var(--success-500);
+  --utility-success-600: var(--success-400);
+  --utility-success-700: var(--success-300);
+
+  /*!----Dark Mode Utility Error Colors----*/
+  --utility-error-50: var(--error-950);
+  --utility-error-100: var(--error-900);
+  --utility-error-200: var(--error-800);
+  --utility-error-300: var(--error-700);
+  --utility-error-400: var(--error-600);
+  --utility-error-500: var(--error-500);
+  --utility-error-600: var(--error-400);
+  --utility-error-700: var(--error-300);
+
+  /*!----Dark Mode Utility Warning Colors----*/
+  --utility-warning-50: var(--warning-950);
+  --utility-warning-100: var(--warning-900);
+  --utility-warning-200: var(--warning-800);
+  --utility-warning-300: var(--warning-700);
+  --utility-warning-400: var(--warning-600);
+  --utility-warning-500: var(--warning-500);
+  --utility-warning-600: var(--warning-400);
+  --utility-warning-700: var(--warning-300);
+}

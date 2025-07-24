@@ -1,0 +1,188 @@
+export const primaryColors = {
+  light: {
+    // Base Colors
+    white: '#ffffff',
+    black: '#000000',
+    transparent: 'rgba(255, 255, 255, 0)',
+
+    // Gray Colors
+    gray25: '#fdfdfd',
+    gray50: '#fafafa',
+    gray100: '#f5f5f5',
+    gray200: '#e9eaeb',
+    gray300: '#d5d7da',
+    gray400: '#a4a7ae',
+    gray500: '#717680',
+    gray600: '#535862',
+    gray700: '#414651',
+    gray800: '#252b37',
+    gray900: '#181d27',
+    gray950: '#0a0d12',
+
+    // Gray Dark Colors
+    grayDark25: '#fafafa',
+    grayDark50: '#f7f7f7',
+    grayDark100: '#f0f0f1',
+    grayDark200: '#ececed',
+    grayDark300: '#cecfd2',
+    grayDark400: '#94979c',
+    grayDark500: '#85888e',
+    grayDark600: '#61646c',
+    grayDark700: '#373a41',
+    grayDark800: '#22262f',
+    grayDark900: '#13161b',
+    grayDark950: '#0c0e12',
+
+    // Brand Colors
+    brand25: '#fcfaff',
+    brand50: '#f9f5ff',
+    brand100: '#f4ebff',
+    brand200: '#e9d7fe',
+    brand300: '#d6bbfb',
+    brand400: '#b692f6',
+    brand500: '#9e77ed',
+    brand600: '#7f56d9',
+    brand700: '#6941c6',
+    brand800: '#53389e',
+    brand900: '#42307d',
+    brand950: '#2c1c5f',
+
+    // Error Colors
+    error25: '#fffbfa',
+    error50: '#fef3f2',
+    error100: '#fee4e2',
+    error200: '#fecdca',
+    error300: '#fda29b',
+    error400: '#f97066',
+    error500: '#f04438',
+    error600: '#d92d20',
+    error700: '#b42318',
+    error800: '#912018',
+    error900: '#7a271a',
+    error950: '#55160c',
+
+    // Warning Colors
+    warning25: '#fffcf5',
+    warning50: '#fffaeb',
+    warning100: '#fef0c7',
+    warning200: '#fedf89',
+    warning300: '#fec84b',
+    warning400: '#fdb022',
+    warning500: '#f79009',
+    warning600: '#dc6803',
+    warning700: '#b54708',
+    warning800: '#93370d',
+    warning900: '#7a2e0e',
+    warning950: '#4e1d09',
+
+    // Success Colors
+    success25: '#f6fef9',
+    success50: '#ecfdf3',
+    success100: '#dcfae6',
+    success200: '#abefc6',
+    success300: '#75e0a7',
+    success400: '#47cd89',
+    success500: '#17b26a',
+    success600: '#079455',
+    success700: '#067647',
+    success800: '#085d3a',
+    success900: '#074d31',
+    success950: '#053321',
+
+    // Other Colors
+    otherGray300: '#d5d7da',
+  },
+  dark: {
+    // Base Colors (same in dark)
+    white: '#ffffff',
+    black: '#000000',
+    transparent: 'rgba(255, 255, 255, 0)',
+
+    // Gray Colors (same values in dark)
+    gray25: '#fdfdfd',
+    gray50: '#fafafa',
+    gray100: '#f5f5f5',
+    gray200: '#e9eaeb',
+    gray300: '#d5d7da',
+    gray400: '#a4a7ae',
+    gray500: '#717680',
+    gray600: '#535862',
+    gray700: '#414651',
+    gray800: '#252b37',
+    gray900: '#181d27',
+    gray950: '#0a0d12',
+
+    // Gray Dark Colors (same values)
+    grayDark25: '#fafafa',
+    grayDark50: '#f7f7f7',
+    grayDark100: '#f0f0f1',
+    grayDark200: '#ececed',
+    grayDark300: '#cecfd2',
+    grayDark400: '#94979c',
+    grayDark500: '#85888e',
+    grayDark600: '#61646c',
+    grayDark700: '#373a41',
+    grayDark800: '#22262f',
+    grayDark900: '#13161b',
+    grayDark950: '#0c0e12',
+
+    // Brand Colors (overrides from .dark block)
+    brand25: '#fcfaff',
+    brand50: '#f9f5ff',
+    brand100: '#f4ebff',
+    brand200: '#e9d7fe',
+    brand300: '#a4a7ae', // var(--gray-400)
+    brand400: '#535862', // var(--gray-600)
+    brand500: '#9e77ed',
+    brand600: '#7f56d9',
+    brand700: '#6941c6',
+    brand800: '#53389e',
+    brand900: '#42307d',
+    brand950: '#2c1c5f',
+
+    // Error Colors (same in dark)
+    error25: '#fffbfa',
+    error50: '#fef3f2',
+    error100: '#fee4e2',
+    error200: '#fecdca',
+    error300: '#fda29b',
+    error400: '#f97066',
+    error500: '#f04438',
+    error600: '#d92d20',
+    error700: '#b42318',
+    error800: '#912018',
+    error900: '#7a271a',
+    error950: '#55160c',
+
+    // Warning Colors (same in dark)
+    warning25: '#fffcf5',
+    warning50: '#fffaeb',
+    warning100: '#fef0c7',
+    warning200: '#fedf89',
+    warning300: '#fec84b',
+    warning400: '#fdb022',
+    warning500: '#f79009',
+    warning600: '#dc6803',
+    warning700: '#b54708',
+    warning800: '#93370d',
+    warning900: '#7a2e0e',
+    warning950: '#4e1d09',
+
+    // Success Colors (same in dark)
+    success25: '#f6fef9',
+    success50: '#ecfdf3',
+    success100: '#dcfae6',
+    success200: '#abefc6',
+    success300: '#75e0a7',
+    success400: '#47cd89',
+    success500: '#17b26a',
+    success600: '#079455',
+    success700: '#067647',
+    success800: '#085d3a',
+    success900: '#074d31',
+    success950: '#053321',
+
+    // Other Colors
+    otherGray300: '#d5d7da',
+  },
+};

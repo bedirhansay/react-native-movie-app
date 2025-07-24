@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "react-native-movie-app",
-    "slug": "react-native-movie-app",
+    "name": "fast-food",
+    "slug": "fast-food",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "reactnativemovieapp",
+    "scheme": "fastfood",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
