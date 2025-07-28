@@ -12,9 +12,11 @@ import avatar from '@/assets/images/avatar.png';
 import backgroundImages from '@/assets/images/background-images.png';
 
 import logo from '@/assets/images/mersel-logo.png';
+import radialBg from '@/assets/images/radial-bg.png';
 
 export const merselImages = {
   backgroundImages,
+  radialBg,
   logo,
 };
 

@@ -1,26 +1,19 @@
-import { fakeCustomers } from '@/constant/customer.mock';
+import { fakeCustomers } from '@/constant/fake-customers';
 import { formatCurrency } from '@/lib/format-currency';
 import clsx from 'clsx';
 import React from 'react';
-import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-export default function CustomerList() {
+export default function CustomerList({ header }: { header?: React.ReactElement }) {
   const insets = useSafeAreaInsets();
 
   return (
     <FlatList
       data={fakeCustomers}
       keyExtractor={(item) => item.id.toString()}
+      ListHeaderComponent={header}
       contentContainerStyle={{ paddingBottom: insets.bottom + 20 }}
-      ListHeaderComponent={
-        <View className="flex-row items-center justify-between px-4 pt-4">
-          <Text className="text-lg font-bold text-gray-800">Müşteriler</Text>
-          <TouchableOpacity>
-            <Text className="text-sm text-blue-500 font-medium">Tümünü gör</Text>
-          </TouchableOpacity>
-        </View>
-      }
       renderItem={({ item }) => {
         const isNegative = item.balance < 0;
 
