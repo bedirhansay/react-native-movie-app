@@ -1,5 +1,6 @@
 import home from '@/assets/icons/home.png';
 
+import grid from '@/assets/icons/grid.png';
 import person from '@/assets/icons/person.png';
 import plus from '@/assets/icons/plus.png';
 import search from '@/assets/icons/search.png';
@@ -24,6 +25,7 @@ export const images = {
   avatar,
   logo,
   home,
+  grid,
   location,
   person,
   plus,

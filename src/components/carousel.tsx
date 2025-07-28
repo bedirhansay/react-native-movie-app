@@ -6,6 +6,7 @@ import React, { useRef } from 'react';
 import { Dimensions, Text, View } from 'react-native';
 import { useSharedValue } from 'react-native-reanimated';
 import Carousel, { ICarouselInstance, Pagination } from 'react-native-reanimated-carousel';
+import Svg, { Path } from 'react-native-svg';
 const { width: screenWidth } = Dimensions.get('window');
 
 export default function CarouselSection() {
@@ -17,6 +18,16 @@ export default function CarouselSection() {
       count: index - progress.value,
       animated: true,
     });
+  };
+
+  const MiniLineChart = () => {
+    const path = 'M0 20 C 50 10, 150 30, 268 15';
+
+    return (
+      <Svg width={268} height={30}>
+        <Path d={path} stroke="#FB923C" strokeWidth={3} fill="none" />
+      </Svg>
+    );
   };
 
   return (
@@ -38,20 +49,38 @@ export default function CarouselSection() {
           parallaxScrollingScale: 1,
         }}
         renderItem={({ item }) => (
-          <BlurView className="flex-1 rounded-2xl  overflow-hidden w-[320px] ">
+          <BlurView className="flex-1 rounded-2xl  overflow-hidden w-[320px]">
             <LinearGradient
-              colors={['#8E2DE2', '#4A00E0']}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={{ flex: 1, opacity: 0.92, padding: 16 }}
+              colors={['rgba(67, 0, 177, 0.80)', 'rgba(165, 49, 220, 0.80)']}
+              start={{ x: 0, y: 1 }}
+              end={{ x: 1, y: 0 }}
+              style={{
+                flex: 1,
+                padding: 16,
+                borderRadius: 12,
+                opacity: 0.75,
+              }}
             >
-              <View className="flex-1 justify-between ">
+              <View className="flex-1 justify-between">
                 <View className="flex-row justify-between items-start">
-                  <View>
+                  <View className="flex flex-row gap-4">
                     <Text className="text-white font-bold text-base">{item.title}</Text>
                     <View className="mt-1">
                       <Text className="text-white text-xs bg-white/20 px-2 py-0.5 rounded">{item.currency}</Text>
                     </View>
+                  </View>
+                </View>
+
+                <View className="flex flex-row justify-between items-center ">
+                  <View>
+                    <Text className="text-white font-extrabold text-2xl">
+                      {item.amount.toLocaleString('tr-TR', {
+                        style: 'currency',
+                        currency: item.currency,
+                        maximumFractionDigits: 0,
+                      })}
+                    </Text>
+                    <Text className="text-white text-sm mt-1">{item.period}</Text>
                   </View>
 
                   <View className="bg-white/10 p-2 rounded-xl">
@@ -59,15 +88,8 @@ export default function CarouselSection() {
                   </View>
                 </View>
 
-                <View>
-                  <Text className="text-white font-extrabold text-2xl">
-                    {item.amount.toLocaleString('tr-TR', {
-                      style: 'currency',
-                      currency: item.currency,
-                      maximumFractionDigits: 0,
-                    })}
-                  </Text>
-                  <Text className="text-white text-sm mt-1">{item.period}</Text>
+                <View className="mt-4">
+                  <MiniLineChart />
                 </View>
               </View>
             </LinearGradient>

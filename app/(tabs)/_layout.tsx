@@ -7,9 +7,9 @@ import cn from 'clsx';
 import { TabBarIconProps } from '../../type';
 
 const TabBarIcon = ({ focused, icon, title }: TabBarIconProps) => (
-  <View className="tab-icon">
-    <Image source={icon} className="size-7 " resizeMode="contain" tintColor={focused ? '#FE8C00' : '#5D5F6D'} />
-    {focused && <Text className={cn('text-sm font-bold', focused ? 'text-primary' : 'text-gray-200')}>{title}</Text>}
+  <View className={`tab-icon ${focused ? 'bg-[#FAFAFA] rounded-lg' : ''}`}>
+    <Image source={icon} className="size-6 " resizeMode="contain" tintColor={focused ? '#414651' : '#5D5F6D'} />
+    {focused && <Text className={cn('text-md font-bold', focused ? 'text-[#5D5F6D]' : 'text-gray-200')}>{title}</Text>}
   </View>
 );
 
@@ -37,7 +37,7 @@ export default function TabLayout() {
         name="transactions"
         options={{
           title: 'Transactions',
-          tabBarIcon: ({ focused }) => <TabBarIcon title="İşlemler" icon={images.search} focused={focused} />,
+          tabBarIcon: ({ focused }) => <TabBarIcon title="İşlemler" icon={images.grid} focused={focused} />,
         }}
       />
 

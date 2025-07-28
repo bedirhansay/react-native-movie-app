@@ -16,8 +16,8 @@ export default function MDSButton({ title, onPress, className, style, disabled =
       onPress={onPress}
       disabled={disabled}
       className={clsx(
-        'self-stretch rounded-xl overflow-hidden py-4 px-6',
-        'bg-white/20 backdrop-blur-sm border border-white/30',
+        'self-stretch rounded-xl overflow-hidden py-4 px-6 mx-auto flex items-center justify-center',
+        'bg-white/20 backdrop-blur-sm border border-white/30 shadow-inner w-[302px]',
         disabled ? 'opacity-50' : 'opacity-100',
         className
       )}
@@ -29,6 +29,7 @@ export default function MDSButton({ title, onPress, className, style, disabled =
           shadowRadius: 12,
           elevation: 8,
         },
+
         style,
       ]}
     >

@@ -1,9 +1,8 @@
+import { images } from '@/constant';
 import { fakeCustomers } from '@/constant/fake-customers';
-import { formatCurrency } from '@/lib/format-currency';
-import clsx from 'clsx';
 import { BlurView } from 'expo-blur';
 import React, { useRef } from 'react';
-import { Dimensions, Text, View } from 'react-native';
+import { Dimensions, Image, Text, View } from 'react-native';
 import { useSharedValue } from 'react-native-reanimated';
 import Carousel, { ICarouselInstance } from 'react-native-reanimated-carousel';
 const { width: screenWidth } = Dimensions.get('window');
@@ -26,7 +25,7 @@ export default function FavCustomer() {
         loop
         width={screenWidth}
         autoPlay={false}
-        height={86}
+        height={80}
         data={fakeCustomers}
         pagingEnabled
         style={{ paddingLeft: screenWidth * 0.05 }}
@@ -34,29 +33,21 @@ export default function FavCustomer() {
         scrollAnimationDuration={700}
         mode="parallax"
         modeConfig={{
-          parallaxScrollingOffset: 100,
+          parallaxScrollingOffset: 160,
           parallaxScrollingScale: 1,
         }}
         renderItem={({ item }) => (
-          <BlurView className="flex-1 rounded-2xl  overflow-hidden w-[320px] ">
-            <View className="flex-row items-center justify-between bg-white mx-4 my-2 p-4 rounded-xl shadow-sm">
-              <View
-                className="h-12 w-12 rounded-full items-center justify-center"
-                style={{ backgroundColor: item.logoColor }}
-              >
-                <Text className="text-white font-bold">{item.name.charAt(0)}</Text>
+          <BlurView className="flex-1 rounded-2xl border border-[#E9EAEB] p-3  overflow-hidden w-[250px] ">
+            <View className="flex-row items-center justify-between bg-white p-3  rounded-xl shadow-sm">
+              <View className="h-10 w-10 rounded-full items-center justify-center">
+                <Image source={images.customerIcon} />
               </View>
 
               <View className="flex-1 mx-4">
-                <Text className="font-semibold text-gray-800" numberOfLines={1}>
+                <Text className="font-semibold text-xs text-gray-800" numberOfLines={1}>
                   {item.name}
                 </Text>
                 <Text className="text-xs text-gray-500">{item.taxNumber}</Text>
-              </View>
-
-              <View className="items-end">
-                <Text className="text-xs text-gray-400">Bakiye</Text>
-                <Text className={clsx('font-bold', 'text-gray-800')}>{formatCurrency(item.balance)}</Text>
               </View>
             </View>
           </BlurView>

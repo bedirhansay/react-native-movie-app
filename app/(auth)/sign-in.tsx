@@ -31,7 +31,7 @@ const SignIn = () => {
   };
 
   return (
-    <View className="absolute left-0 right-0 bottom-0 px-6 justify-end" style={{ paddingBottom: insets.bottom + 20 }}>
+    <View className="absolute left-0 right-0 bottom-0 px-6  justify-end" style={{ paddingBottom: insets.bottom + 20 }}>
       <MDSButton title="Giriş Yap" onPress={() => setModalVisible(true)} disabled={isSubmitting} />
 
       <TouchableOpacity>
