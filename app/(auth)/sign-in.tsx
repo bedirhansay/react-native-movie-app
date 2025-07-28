@@ -1,58 +1,52 @@
-import CustomButton from '@/components/CustomButton';
-import CustomInput from '@/components/CustomInput';
-
-import { Link } from 'expo-router';
+import MDSButton from '@/components/Button';
+import MDSModal from '@/components/modals/login';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { router } from 'expo-router';
 import { useState } from 'react';
-import { Alert, Text, View } from 'react-native';
+import { Alert, Text, TouchableOpacity, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const SignIn = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [form, setForm] = useState({ email: '', password: '' });
+  const insets = useSafeAreaInsets();
+  const [modalVisible, setModalVisible] = useState(false);
 
-  const submit = async () => {
-    const { email, password } = form;
-
-    if (!email || !password) return Alert.alert('Error', 'Please enter valid email address & password.');
+  const submit = async ({ email, password }: { email: string; password: string }) => {
+    if (!password) {
+      Alert.alert('Hata', 'Lütfen geçerli e-posta ve şifre girin.');
+      return;
+    }
 
     setIsSubmitting(true);
 
-    // try {
-    //   await signIn({ email, password });
-
-    //   router.replace('/');
-    // } catch (error: any) {
-    //   Alert.alert('Error', error.message);
-    //   Sentry.captureEvent(error);
-    // } finally {
-    //   setIsSubmitting(false);
-    // }
+    try {
+      const token = '22324433';
+      await AsyncStorage.setItem('token', token);
+      router.replace('/(tabs)');
+    } catch (error: any) {
+      Alert.alert('Hata', error.message || 'Giriş sırasında bir hata oluştu.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <View className="gap-10 bg-white rounded-lg p-5 mt-5">
-      <CustomInput
-        placeholder="Enter your email"
-        value={form.email}
-        onChangeText={(text) => setForm((prev) => ({ ...prev, email: text }))}
-        label="Email"
-        keyboardType="email-address"
-      />
-      <CustomInput
-        placeholder="Enter your password"
-        value={form.password}
-        onChangeText={(text) => setForm((prev) => ({ ...prev, password: text }))}
-        label="Password"
-        secureTextEntry={true}
-      />
+    <View className="absolute left-0 right-0 bottom-0 px-6 justify-end" style={{ paddingBottom: insets.bottom + 20 }}>
+      <MDSButton title="Giriş Yap" onPress={() => setModalVisible(true)} disabled={isSubmitting} />
 
-      <CustomButton title="Sign In" isLoading={isSubmitting} onPress={submit} />
+      <TouchableOpacity>
+        <Text className="text-center text-white mt-4">
+          Hesabınız Yok mu? <Text className="font-semibold underline">Hesap Oluştur</Text>
+        </Text>
+      </TouchableOpacity>
 
-      <View className="flex justify-center mt-5 flex-row gap-2">
-        <Text className="base-regular text-gray-100">Dont have an account?</Text>
-        <Link href="/sign-up" className="base-bold text-primary">
-          Sign Up
-        </Link>
-      </View>
+      <MDSModal
+        visible={modalVisible}
+        onClose={() => setModalVisible(false)}
+        onSubmit={(data) => {
+          submit(data);
+        }}
+      />
     </View>
   );
 };
