@@ -8,8 +8,8 @@ import { TabBarIconProps } from '../../type';
 
 const TabBarIcon = ({ focused, icon, title }: TabBarIconProps) => (
   <View className="tab-icon">
-    <Image source={icon} className="size-7" resizeMode="contain" tintColor={focused ? '#FE8C00' : '#5D5F6D'} />
-    <Text className={cn('text-sm font-bold', focused ? 'text-primary' : 'text-gray-200')}>{title}</Text>
+    <Image source={icon} className="size-7 " resizeMode="contain" tintColor={focused ? '#FE8C00' : '#5D5F6D'} />
+    {focused && <Text className={cn('text-sm font-bold', focused ? 'text-primary' : 'text-gray-200')}>{title}</Text>}
   </View>
 );
 
@@ -34,25 +34,18 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="search"
+        name="transactions"
         options={{
-          title: 'Search',
-          tabBarIcon: ({ focused }) => <TabBarIcon title="Search" icon={images.search} focused={focused} />,
+          title: 'Transactions',
+          tabBarIcon: ({ focused }) => <TabBarIcon title="İşlemler" icon={images.search} focused={focused} />,
         }}
       />
 
       <Tabs.Screen
-        name="filter"
+        name="plus"
         options={{
-          title: 'Filter',
-          tabBarIcon: ({ focused }) => <TabBarIcon title="Filter" icon={images.search} focused={focused} />,
-        }}
-      />
-      <Tabs.Screen
-        name="cart"
-        options={{
-          title: 'Cart',
-          tabBarIcon: ({ focused }) => <TabBarIcon title="Cart" icon={images.bag} focused={focused} />,
+          title: 'Plus',
+          tabBarIcon: ({ focused }) => <TabBarIcon title="Plus" icon={images.plus} focused={focused} />,
         }}
       />
       <Tabs.Screen
