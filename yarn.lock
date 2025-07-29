@@ -1017,7 +1017,7 @@
     dotenv-expand "~11.0.6"
     getenv "^2.0.0"
 
-"@expo/fingerprint@0.13.4", "@expo/fingerprint@~0.13.4":
+"@expo/fingerprint@0.13.4":
   version "0.13.4"
   resolved "https://registry.npmjs.org/@expo/fingerprint/-/fingerprint-0.13.4.tgz"
   integrity sha512-MYfPYBTMfrrNr07DALuLhG6EaLVNVrY/PXjEzsjWdWE4ZFn0yqI0IdHNkJG7t1gePT8iztHc7qnsx+oo/rDo6w==
