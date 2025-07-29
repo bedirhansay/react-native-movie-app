@@ -42,7 +42,7 @@ export default function Header() {
           <ChevronRight size={16} color="#4B5563" />
         </View>
       </View>
-      <View className=" bg-[#FAFAFA] m-4 rounded-xl  overflow-hidden py-2 ">
+      <View className=" bg-[#FAFAFA] border border-[#E9EAEB] m-4 rounded-xl  overflow-hidden py-2 ">
         <FavCustomer />
       </View>
 

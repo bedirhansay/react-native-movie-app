@@ -55,6 +55,21 @@ export default function TabLayout() {
           tabBarIcon: ({ focused }) => <TabBarIcon title="Profile" icon={images.person} focused={focused} />,
         }}
       />
+
+      <Tabs.Screen
+        name="customers"
+        options={{
+          href: null,
+          title: 'Customers',
+        }}
+      />
+      <Tabs.Screen
+        name="/"
+        options={{
+          href: null,
+          title: 'index',
+        }}
+      />
     </Tabs>
   );
 }

@@ -38,9 +38,9 @@ export default function FavCustomer() {
           parallaxScrollingScale: 1,
         }}
         renderItem={({ item }) => (
-          <Pressable className="flex-1" onPress={() => router.push(`/customers/${item.id}`)}>
-            <BlurView className="flex-1 rounded-2xl border border-[#E9EAEB] p-3  overflow-hidden w-[250px] ">
-              <View className="flex-row items-center justify-between bg-white p-3  rounded-xl shadow-sm">
+          <Pressable className="flex-1 " onPress={() => router.push(`/customers/${item.id}`)}>
+            <BlurView className="flex-1 rounded-2xl  p-3  overflow-hidden w-[250px] ">
+              <View className="flex-row items-center justify-between bg-white p-3  rounded-md shadow-sm">
                 <View className="h-10 w-10 rounded-full items-center justify-center">
                   <Image source={images.customerIcon} />
                 </View>

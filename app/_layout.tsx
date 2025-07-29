@@ -6,7 +6,6 @@ import { useFonts } from 'expo-font';
 import React, { Fragment, useEffect } from 'react';
 import { StatusBar } from 'react-native';
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -22,12 +21,10 @@ export default function RootLayout() {
     if (error) throw error;
 
     if (fontsLoaded) {
-      // Hide the splash screen once fonts are loaded
       SplashScreen.hideAsync();
     }
   }, [fontsLoaded, error]);
 
-  // Don't render anything until fonts are loaded
   if (!fontsLoaded) {
     return null;
   }
@@ -38,6 +35,13 @@ export default function RootLayout() {
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="(modal)"
+          options={{
+            presentation: 'modal',
+            headerShown: false,
+          }}
+        />
       </Stack>
       <Toast />
     </Fragment>
