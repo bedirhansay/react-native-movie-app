@@ -1,10 +1,12 @@
+import TabButtonGroup from '@/components/ButtonGroup';
 import FrostedButton from '@/components/buttons';
 import { merselImages } from '@/constant';
 import { useLocalSearchParams } from 'expo-router';
-import { ArrowDownLeft, ArrowUpRight, Copy, Settings2, Star } from 'lucide-react-native';
+import { ArrowDownLeft, ArrowUpRight, Copy, FilterIcon, Settings2, Star } from 'lucide-react-native';
 import React from 'react';
 import { Image, ImageBackground, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Filter } from 'react-native-svg';
 import Header from './header';
 
 export const CustomerDetail = () => {
@@ -67,14 +69,53 @@ export const CustomerDetail = () => {
         </ImageBackground>
 
         <View className="bg-white -mt-20 rounded-t-3xl px-4 pt-6 pb-20">
-          <Text className="text-gray-800 text-lg font-bold mb-4">Son İşlemler</Text>
+          <TabButtonGroup
+            tabs={[
+              { key: 'recent', label: 'Son İşlemler' },
+              { key: 'files', label: 'Dosyalar' },
+              { key: 'notes', label: 'Notlar' },
+            ]}
+            initialTabKey="recent"
+            onTabChange={(key) => {
+              console.log('Seçilen tab:', key);
+            }}
+          />
+          <View className="mt-4 flex-row  items-center justify-between my-4  rounded-lg">
+            <Text className="text-gray-800 text-lg font-bold">Son İşlemler</Text>
+            <FrostedButton className="border border-[#D5D7DA]" icon={<Filter />}>
+              <View className="flex-row items-center gap-1">
+                <Text>
+                  <FilterIcon size={16} className="text-gray-800" />
+                </Text>
+                <Text className="text-gray-800 font-semibold ">Filtrele</Text>
+              </View>
+            </FrostedButton>
+          </View>
 
           {[1, 2, 3].map((_, index) => (
-            <View key={index} className="mb-4 rounded-xl border border-gray-200 p-4 shadow-sm bg-white">
-              <Text className="font-semibold text-gray-600">Fatura</Text>
-              <Text className="text-gray-500 text-xs mt-1">20.02.2025 15:40</Text>
-              <Text className="text-gray-700 mt-2">Bu alana yazacağınız açıklamalarınız bu şekilde gözükecektir</Text>
-              <Text className="text-right mt-2 font-bold text-gray-800">1450,42₺</Text>
+            <View key={index} className="mb-4 rounded-xl  border border-[#E9EAEB] r0 p-4 bg-white shadow-xs">
+              <View className="flex-row justify-between items-start">
+                <View className="  flex-wrap ">
+                  <View className=" flex-row items-center border gap-2 border-[#E9EAEB] p-1 rounded-md">
+                    <Text className="text-xs border border-[#E9EAEB] p-1 rounded-md text-gray-700">Fatura</Text>
+                    <Text className="text-xs font-semibold  text-gray-700  rounded-md">142124124122</Text>
+
+                    <Text className="text-xs font-semibold ">
+                      <Copy size={16} color="gray" />
+                    </Text>
+                  </View>
+                  <Text className="text-xs text-gray-500 pb-2 mt-1 ">20.02.2025 15:40</Text>
+                </View>
+
+                <View className="items-end">
+                  <Text className="text-xs text-gray-400">Tutar</Text>
+                  <Text className="font-bold text-lg text-gray-900">1450,42₺</Text>
+                </View>
+              </View>
+
+              <Text className="text-sm text-gray-700 mt-2">
+                Bu alana yazacağınız açıklamalarınız bu şekilde gözükecektir
+              </Text>
             </View>
           ))}
         </View>
