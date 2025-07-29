@@ -1,9 +1,9 @@
 import { fakeSummaryCards } from '@/constant/fake-corousel';
 import { BlurView } from 'expo-blur';
 import { LinearGradient } from 'expo-linear-gradient';
-import { EyeOff } from 'lucide-react-native';
+import { EyeIcon, EyeOff } from 'lucide-react-native';
 import React, { useRef } from 'react';
-import { Dimensions, Text, View } from 'react-native';
+import { Dimensions, Pressable, Text, View } from 'react-native';
 import { useSharedValue } from 'react-native-reanimated';
 import Carousel, { ICarouselInstance, Pagination } from 'react-native-reanimated-carousel';
 import Svg, { Path } from 'react-native-svg';
@@ -29,6 +29,7 @@ export default function CarouselSection() {
       </Svg>
     );
   };
+  const [open, setOpen] = React.useState(false);
 
   return (
     <View>
@@ -74,18 +75,20 @@ export default function CarouselSection() {
                 <View className="flex flex-row justify-between items-center ">
                   <View>
                     <Text className="text-white font-extrabold text-2xl">
-                      {item.amount.toLocaleString('tr-TR', {
-                        style: 'currency',
-                        currency: item.currency,
-                        maximumFractionDigits: 0,
-                      })}
+                      {open
+                        ? '*******'
+                        : item.amount.toLocaleString('tr-TR', {
+                            style: 'currency',
+                            currency: item.currency,
+                            maximumFractionDigits: 0,
+                          })}
                     </Text>
                     <Text className="text-white text-sm mt-1">{item.period}</Text>
                   </View>
 
-                  <View className="bg-white/10 p-2 rounded-xl">
-                    <EyeOff color="white" size={18} />
-                  </View>
+                  <Pressable onPress={() => setOpen(!open)} className="bg-white/10 p-2 rounded-xl">
+                    {open ? <EyeOff color="white" size={18} /> : <EyeIcon color="white" size={18} />}
+                  </Pressable>
                 </View>
 
                 <View className="mt-4">

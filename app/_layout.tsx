@@ -1,37 +1,43 @@
-import { Stack } from 'expo-router';
+import { SplashScreen, Stack } from 'expo-router';
 import Toast from 'react-native-toast-message';
 import './global.css';
 
-import React, { Fragment } from 'react';
+import { useFonts } from 'expo-font';
+import React, { Fragment, useEffect } from 'react';
 import { StatusBar } from 'react-native';
 
-export default function RootLayout() {
-  // const [fontsLoaded, error] = useFonts({
-  //   'QuickSand-Bold': require('../../assets/fonts/Quicksand-Bold.ttf'),
-  //   'QuickSand-Medium': require('../../assets/fonts/Quicksand-Medium.ttf'),
-  //   'QuickSand-Regular': require('../../assets/fonts/Quicksand-Regular.ttf'),
-  //   'QuickSand-Light': require('../../assets/fonts/Quicksand-Light.ttf'),
-  //   'QuickSand-SemiBold': require('../../assets/fonts/Quicksand-SemiBold.ttf'),
-  // });
+// Prevent the splash screen from auto-hiding before asset loading is complete.
+SplashScreen.preventAutoHideAsync();
 
-  // useEffect(() => {
-  //   if (error) throw error;
-  //   if (!fontsLoaded) return;
-  //   if (fontsLoaded) SplashScreen.hideAsync();
-  // }, [fontsLoaded, error]);
+export default function RootLayout() {
+  const [fontsLoaded, error] = useFonts({
+    'QuickSand-Bold': require('../src/assets/fonts/Quicksand-Bold.ttf'),
+    'QuickSand-Medium': require('../src/assets/fonts/Quicksand-Medium.ttf'),
+    'QuickSand-Regular': require('../src/assets/fonts/Quicksand-Regular.ttf'),
+    'QuickSand-Light': require('../src/assets/fonts/Quicksand-Light.ttf'),
+    'QuickSand-SemiBold': require('../src/assets/fonts/Quicksand-SemiBold.ttf'),
+  });
+
+  useEffect(() => {
+    if (error) throw error;
+
+    if (fontsLoaded) {
+      // Hide the splash screen once fonts are loaded
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, error]);
+
+  // Don't render anything until fonts are loaded
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <Fragment>
-      <StatusBar backgroundColor="#1C1B22" translucent={false} />
+      <StatusBar backgroundColor="#2D1B69" translucent={false} />
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen
-          name="(modal)"
-          options={{
-            presentation: 'modal',
-            headerShown: false,
-          }}
-        />
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       </Stack>
       <Toast />
     </Fragment>

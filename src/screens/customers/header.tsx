@@ -1,6 +1,7 @@
 import CarouselSection from '@/components/carousel';
 import CustomerList from '@/screens/customers/customer-list';
 
+import { Link } from 'expo-router';
 import { ChevronRight, Plus, Search } from 'lucide-react-native';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
@@ -34,7 +35,10 @@ export default function Header() {
         <Text className="text-gray-800 text-lg font-bold">Favori Müşteriler</Text>
 
         <View className="flex-row items-center">
-          <Text className="text-sm text-gray-600 font-semibold">Tümünü Gör</Text>
+          <Link href="/customers" className="text-gray-800 text-sm font-semibold">
+            Tümünü Gör
+          </Link>
+
           <ChevronRight size={16} color="#4B5563" />
         </View>
       </View>
@@ -46,7 +50,10 @@ export default function Header() {
         <Text className="text-gray-800 text-lg font-bold">Müşteriler</Text>
 
         <View className="flex-row items-center">
-          <Text className="text-sm text-gray-600 font-semibold">Tümünü Gör</Text>
+          <Link href="/customers" className="text-gray-800 text-sm font-semibold">
+            Tümünü Gör
+          </Link>
+
           <ChevronRight size={16} color="#4B5563" />
         </View>
       </View>

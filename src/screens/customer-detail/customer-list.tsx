@@ -1,9 +1,8 @@
 import { fakeCustomers } from '@/constant/fake-customers';
 import { formatCurrency } from '@/lib/format-currency';
 import clsx from 'clsx';
-import { router } from 'expo-router';
 import React from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function CustomerList({ header }: { header?: React.ReactElement }) {
@@ -17,8 +16,7 @@ export default function CustomerList({ header }: { header?: React.ReactElement }
         const isNegative = item.balance < 0;
 
         return (
-          <Pressable
-            onPress={() => router.push(`/customers/${item.id}`)}
+          <View
             key={item.id}
             className="flex-row items-center border border-[#E9EAEB] justify-between bg-white mx-1 my-2 p-4 rounded-xl shadow-xs"
           >
@@ -42,7 +40,7 @@ export default function CustomerList({ header }: { header?: React.ReactElement }
                 {formatCurrency(item.balance)}
               </Text>
             </View>
-          </Pressable>
+          </View>
         );
       })}
     </ScrollView>

@@ -26,7 +26,6 @@ export const images = {
   logo,
   home,
   grid,
-  location,
   person,
   plus,
   search,
