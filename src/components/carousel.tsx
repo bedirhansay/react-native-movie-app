@@ -1,12 +1,12 @@
 import { fakeSummaryCards } from '@/constant/fake-corousel';
-import { BlurView } from 'expo-blur';
 import { LinearGradient } from 'expo-linear-gradient';
 import { EyeIcon, EyeOff } from 'lucide-react-native';
 import React, { useRef } from 'react';
-import { Dimensions, Pressable, Text, View } from 'react-native';
+import { Dimensions, Platform, Pressable, Text, View } from 'react-native';
 import { useSharedValue } from 'react-native-reanimated';
 import Carousel, { ICarouselInstance, Pagination } from 'react-native-reanimated-carousel';
 import Svg, { Path } from 'react-native-svg';
+import { MDSBlurCard } from './BlurView';
 const { width: screenWidth } = Dimensions.get('window');
 
 export default function CarouselSection() {
@@ -46,11 +46,16 @@ export default function CarouselSection() {
         scrollAnimationDuration={700}
         mode="parallax"
         modeConfig={{
-          parallaxScrollingOffset: 100,
+          parallaxScrollingOffset: Platform.OS === 'ios' ? screenWidth * 0.15 : screenWidth * 0.2,
           parallaxScrollingScale: 1,
         }}
         renderItem={({ item }) => (
-          <BlurView className="flex-1 rounded-2xl  overflow-hidden w-[320px]">
+          <MDSBlurCard
+            style={{
+              width: screenWidth * 0.8,
+            }}
+            className="flex-1 rounded-2xl  overflow-hidden"
+          >
             <LinearGradient
               colors={['rgba(67, 0, 177, 0.80)', 'rgba(165, 49, 220, 0.80)']}
               start={{ x: 0, y: 1 }}
@@ -96,7 +101,7 @@ export default function CarouselSection() {
                 </View>
               </View>
             </LinearGradient>
-          </BlurView>
+          </MDSBlurCard>
         )}
       />
 

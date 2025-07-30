@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./src/assets/images/mersel-logo.png",
     "scheme": "mersel",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
@@ -28,6 +28,7 @@
       "output": "static",
       "favicon": "./assets/images/mersel-logo.png"
     },
+
     "plugins": [
       "expo-router",
       [
@@ -35,15 +36,10 @@
         {
           "image": "./src/assets/images/splash.png",
           "resizeMode": "contain",
-          "backgroundColor": "#2D1B69"
+          "backgroundColor": "#232323"
         }
       ]
     ],
-    "splash": {
-      "image": "./src/assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#2D1B69"
-    },
     "experiments": {
       "typedRoutes": true
     },
@@ -53,9 +49,7 @@
         "projectId": "7003486b-52c8-4eab-893f-3bf63fdf20c7"
       }
     },
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
+    "runtimeVersion": "1.0.0",
     "updates": {
       "url": "https://u.expo.dev/7003486b-52c8-4eab-893f-3bf63fdf20c7"
     },
