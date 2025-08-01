@@ -11,7 +11,7 @@ export default function Header({ id }: { id?: string }) {
           <ChevronLeft size={28} color="white" />
         </TouchableOpacity>
 
-        <Text className="text-white text-xl text-primaryColors-brand-400 font-bold">Müşteriler {id}</Text>
+        <Text className="text-white text-xl  font-bold">Müşteriler {id}</Text>
       </View>
 
       <View className="flex-row space-x-3 gap-2">
