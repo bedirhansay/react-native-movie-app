@@ -1,4 +1,4 @@
-import { primaryColors } from '../source/primary-colors';
+import { primaryColors } from '../source/primary-colors.cjs';
 
 export const backgroundColor = {
   'bg-primary': primaryColors['white'],

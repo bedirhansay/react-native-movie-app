@@ -1,4 +1,4 @@
-import { primaryColors } from '../source/primary-colors';
+import { primaryColors } from '../source/primary-colors.cjs';
 
 export const brandUtilityColors = {
   // Light Mode Utility Brand Colors

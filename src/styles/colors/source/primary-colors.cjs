@@ -1,5 +1,3 @@
-
-
 export const primaryColors = {
   // Base Colors
   white: '#ffffff',
@@ -92,4 +90,4 @@ export const primaryColors = {
 
   'brand-300-dark': '#a4a7ae',
   'brand-400-dark': '#535862',
-} as const;
+};

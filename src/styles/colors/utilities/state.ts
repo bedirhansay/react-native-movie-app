@@ -1,4 +1,4 @@
-import { primaryColors } from '../source/primary-colors';
+import { primaryColors } from '../source/primary-colors.cjs';
 
 export const stateUtilityColors = {
   'utility-success-50': primaryColors['success-50'],

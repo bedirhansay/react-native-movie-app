@@ -1,3 +1,5 @@
+const desingSystem = require('./src/styles/colors/source/primary-colors.cjs');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./app/**/*.{js,jsx,ts,tsx}', './src/**/*.{js,jsx,ts,tsx}'],
@@ -5,7 +7,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#FE8C00',
         white: {
           DEFAULT: '#ffffff',
           100: '#fafafa',
