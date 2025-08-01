@@ -1,1 +1,1 @@
-export { CustomersScreen as default } from '@/screens/customers';
+export { CustomersScreen as default } from '@/screens/customers/list';

@@ -1,7 +1,7 @@
 import { Redirect, Tabs } from 'expo-router';
 import { Image, Text, View } from 'react-native';
 
-import { images } from '@/constant';
+import { images } from '@/lib/constant';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import cn from 'clsx';
 import { TabBarIconProps } from '../../type';

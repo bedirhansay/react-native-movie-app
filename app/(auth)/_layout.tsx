@@ -1,5 +1,5 @@
 import { RadialGradientBackground } from '@/components/radial-gradient';
-import { merselImages } from '@/constant';
+import { merselImages } from '@/lib/constant';
 import { Slot } from 'expo-router';
 import React from 'react';
 import { Dimensions, Image, KeyboardAvoidingView, Platform, View } from 'react-native';

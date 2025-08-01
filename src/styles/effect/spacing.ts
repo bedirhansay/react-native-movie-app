@@ -1,0 +1,53 @@
+export const spacing = {
+  'spacing-none': 0, // 0rem / 0px
+  'spacing-xxs': 2, // 0.125rem / 2px
+  'spacing-xs': 4, // 0.25rem / 4px
+  'spacing-sm': 6, // 0.375rem / 6px
+  'spacing-md': 8, // 0.5rem / 8px
+  'spacing-lg': 12, // 0.75rem / 12px
+  'spacing-xl': 16, // 1rem / 16px
+  'spacing-2xl': 20, // 1.25rem / 20px
+  'spacing-3xl': 24, // 1.5rem / 24px
+  'spacing-4xl': 32, // 2rem / 32px
+  'spacing-5xl': 40, // 2.5rem / 40px
+  'spacing-6xl': 48, // 3rem / 48px
+  'spacing-7xl': 64, // 4rem / 64px
+  'spacing-8xl': 80, // 5rem / 80px
+  'spacing-9xl': 96, // 6rem / 96px
+  'spacing-10xl': 128, // 8rem / 128px
+  'spacing-11xl': 160, // 10rem / 160px
+
+  // Numbered Spacing
+  'spacing-0': 0, // 0rem / 0px
+  'spacing-0-5': 2, // 0.125rem / 2px
+  'spacing-1': 4, // 0.25rem / 4px
+  'spacing-1-5': 6, // 0.375rem / 6px
+  'spacing-2': 8, // 0.5rem / 8px
+  'spacing-3': 12, // 0.75rem / 12px
+  'spacing-4': 16, // 1rem / 16px
+  'spacing-5': 20, // 1.25rem / 20px
+  'spacing-6': 24, // 1.5rem / 24px
+  'spacing-8': 32, // 2rem / 32px
+  'spacing-10': 40, // 2.5rem / 40px
+  'spacing-12': 48, // 3rem / 48px
+  'spacing-16': 64, // 4rem / 64px
+  'spacing-20': 80, // 5rem / 80px
+  'spacing-24': 96, // 6rem / 96px
+  'spacing-32': 128, // 8rem / 128px
+  'spacing-40': 160, // 10rem / 160px
+  'spacing-48': 192, // 12rem / 192px
+  'spacing-56': 224, // 14rem / 224px
+  'spacing-64': 256, // 16rem / 256px
+  'spacing-80': 320, // 20rem / 320px
+  'spacing-96': 384, // 24rem / 384px
+  'spacing-120': 480, // 30rem / 480px
+  'spacing-140': 560, // 35rem / 560px
+  'spacing-160': 640, // 40rem / 640px
+  'spacing-180': 720, // 45rem / 720px
+  'spacing-192': 768, // 48rem / 768px
+  'spacing-256': 1024, // 64rem / 1024px
+  'spacing-320': 1280, // 80rem / 1280px
+  'spacing-360': 1440, // 90rem / 1440px
+  'spacing-400': 1600, // 100rem / 1600px
+  'spacing-480': 1920, // 120rem / 1920px
+} as const;

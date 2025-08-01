@@ -1,4 +1,4 @@
-import { fakeSummaryCards } from '@/constant/fake-corousel';
+import { fakeSummaryCards } from '@/lib/constant/fake-corousel';
 import { LinearGradient } from 'expo-linear-gradient';
 import { EyeIcon, EyeOff } from 'lucide-react-native';
 import React, { useRef } from 'react';
